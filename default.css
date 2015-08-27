@@ -16,7 +16,8 @@ div.text {
     font-family: 'Inder', sans-serif;
     }
 
-img.only {
+
+div.sidematter {
     position:fixed;
     top:30px;
     left:30px;
