@@ -1,0 +1,12 @@
+# Site settings
+title: Stephen Mayhew's blog
+email: 
+description: "Why yes, I did steal my config file from Karpathy."
+baseurl: ""
+url: "http://mayhewsw.github.io"
+twitter_username: mayhewsw
+github_username:  mayhewsw
+
+# Build settings
+markdown: redcarpet
+permalink: pretty
