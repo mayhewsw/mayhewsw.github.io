@@ -32,6 +32,8 @@ $$
 e^{i \pi} + 1 = 0
 $$
 
+(Edit: you might say that this is just composing definitions and there is nothing interesting happening here. Still... you're probably right.)
+
 #### How about an image?
 
 This is a screenshot from the [English Language and Usage Stack Exchange](http://english.stackexchange.com/), in which Joe Blow offers an unbiased, non-hyperbolic, and well-informed opinion.

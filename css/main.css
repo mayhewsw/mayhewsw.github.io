@@ -1,3 +1,7 @@
+/* Colors from this palette:
+http://www.colourlovers.com/palette/148712/Gamebookers
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -45,6 +49,12 @@ div.sidematter {
 
 /* End default.css */
 
+
+.center-image
+{
+    margin: 0 auto;
+    display: block;
+}
 
 /* Layout Styles */
 /* ----------------------------------------------------------*/
