@@ -8,5 +8,5 @@ twitter_username: mayhewsw
 github_username:  mayhewsw
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 permalink: pretty
