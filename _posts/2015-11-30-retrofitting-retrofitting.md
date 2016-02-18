@@ -21,7 +21,7 @@ I confirmed this by doing my own filtering of the word2vec data. When I had a ch
 
 So how was the filtering done? It seemed to be with haphazard capitalization -- sometimes a capitalized word, sometimes a lower-case word. This begged the question: what if we are systematic about this? I did some experiments. Whenever I had a choice of words, I would sort them by capitalization, and select from this list. If I choose the capitalized versions, this is "Sort by most caps, pick the first" in the table. This gets terrible results (similar to what I had been getting from the entire dataset). If I choose the lowercased version, this is "Sort by fewest caps, pick the first", and does very well. In fact, this does better than the reported results in the paper. In the case of MEN-3k, it does significantly better. Finally, if I average all the vectors, this is the last row. This is still better than the reported results, but not as good as lower-cased. 
 
-<img style="width: 80%; display: block; margin: 0 auto", src="/assets/retro/retro-myresults.png">
+<img style="width: 80%; display: block; margin: 0 auto", src="/assets/retro/retro-myresults.png" />
 
 The intuition behind this is straightforward: a word is capitalized when it is at the beginning of a sentence, which is much rarer than being in the middle of a sentence (especially with sentences as long as this one). Thus, capitalized words have less training data. 
 
@@ -37,12 +37,12 @@ An obvious point: retrofitting doesn't change word vectors that are not in the l
 
 A minor quibble: the correlation scores are multiplied by 100 to make them look more compatible with percent values. I found this a little misleading -- correlation ranges from -1 to 1, and so a percentage interpretation makes no sense. I re-decimaled the table, and added color to make it a little easier to read.
 
-<img style="display: block; margin: 0 auto", src="/assets/retro/retro-results-orig.png">
+<img style="display: block; margin: 0 auto", src="/assets/retro/retro-results-orig.png" />
 
 
 A question for future work: what is the importance of coverage in the lexicon? For example, "fawn" and "fawns" have a similarity score of 0.720 before retrofitting, and 0.584 after. This is because PPDB doesn't have this link. In contrast, "cheese" and "cheeses" is in PPDB, and the before/after scores are 0.779, 0.929. With a poorly chosen lexicon, it is possible that retrofitting does more harm than good.
 
-<img style="width: 80%; display: block; margin: 0 auto", src="/assets/retro/retro-examples.png">
+<img style="width: 80%; display: block; margin: 0 auto", src="/assets/retro/retro-examples.png" />
 
 
 
