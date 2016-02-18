@@ -2,7 +2,8 @@
 layout: post
 mathjax: true
 comments: true
-excerpt: How many languages per script?
+excerpt: Language stats
+title: How Many Languages Per Script?
 ---
 
 This afternoon, I found myself asking the following questions:
@@ -11,9 +12,7 @@ This afternoon, I found myself asking the following questions:
 * how many scripts are used by more than one language?
 * what is the distribution of languages by script?
 
-It turns out that these questions are answerable, but it is not trivial. Wikipedia has a [List of Languages by Writing System](https://en.wikipedia.org/wiki/List_of_languages_by_writing_system), but it is a little informal, and is hard to parse automatically. Besides, it seems incomplete. 
-
-Omniglot has a [useful page](http://www.omniglot.com/writing/langalph.htm) on this, but it also feels incomplete and is not easy to parse.   
+It turns out that these questions are answerable, but it is not trivial. Wikipedia has a [List of Languages by Writing System](https://en.wikipedia.org/wiki/List_of_languages_by_writing_system), but it is a little informal, and is hard to parse automatically. Besides, it seems incomplete. Omniglot has a [useful page](http://www.omniglot.com/writing/langalph.htm) on this, but it also feels incomplete and is not easy to parse.   
 
  So, I turned to [scriptsource.org](http://scriptsource.org/), a website affiliated with [SIL](http://www.sil.org/) that gives a lot of information and resources for the world's scripts. 
 
@@ -27,15 +26,24 @@ Each script has it's own page (for example, here's [Mongolian](http://scriptsour
 
 To show the results, I plotted them with individual scripts on the x-axis and number of corresponding languages on the y-axis. 
 
-<img style="width: 80%; display: block; margin: 0 auto", src="/assets/languages_by_script.png">
+<img src="/assets/languages_by_script.png" style="width: 60%; display: block; margin: 0 auto;" />
 
+The leftmost script is Latin, with 513 languages. The x-axis is truncated at 50, after which all scripts have a small number of languages (<3).
 
+Here are the top 10 languages:
 
+1. Latin: 513
+2. Devanagari: 182
+3. Arabic: 171
+4. Cyrillic: 116
+5. Nastaliq Arabic: 69
+6. Ethiopic: 43
+7. Bengali: 39
+8. Thai: 35
+9. Tibetan: 33
+10. Myanmar: 27
+11. Unified Canadian Aboriginal Syllabics: 26
 
-
-
-
-
-
- 
+Finally, if we add up all languages from all scripts, we get 1695. This falls short of the actual number
+of ~3500. Presumably this means that the list is incomplete somehow.
 
