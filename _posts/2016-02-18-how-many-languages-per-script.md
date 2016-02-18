@@ -47,3 +47,5 @@ Here are the top 10 languages:
 Finally, if we add up all languages from all scripts, we get 1695. This falls short of the actual number
 of ~3500. Presumably this means that the list is incomplete somehow.
 
+The full list is [here](https://gist.github.com/mayhewsw/1600aeade3693db38195#file-scriptdists-txt).
+
