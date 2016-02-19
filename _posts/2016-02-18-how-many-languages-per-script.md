@@ -28,7 +28,7 @@ To show the results, I plotted them with individual scripts on the x-axis and nu
 
 <img src="/assets/languages_by_script.png" style="width: 60%; display: block; margin: 0 auto;" />
 
-The leftmost script is Latin, with 513 languages. The x-axis is truncated at 50, after which all scripts have a small number of languages (<3).
+The leftmost script is Latin, with 513 languages. The x-axis is truncated at the 50th script, after which all scripts have a small number of languages (<3).
 
 Here are the top 10 languages:
 
@@ -44,8 +44,8 @@ Here are the top 10 languages:
 10. Myanmar: 27
 11. Unified Canadian Aboriginal Syllabics: 26
 
-Finally, if we add up all languages from all scripts, we get 1695. This falls short of the actual number
-of ~3500. Presumably this means that the list is incomplete somehow.
+Finally, if we add up all languages from all scripts in this list, we get 1695. This falls short of the actual number
+of ~3500. This suggests that this list is missing many entries. 
 
 The full list is [here](https://gist.github.com/mayhewsw/1600aeade3693db38195#file-scriptdists-txt).
 

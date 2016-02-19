@@ -1,12 +1,28 @@
-# Site settings
-title: Stephen Mayhew's blog
-email: 
-description: "Why yes, I did steal my config file from Karpathy."
-baseurl: ""
-url: "http://mayhewsw.github.io"
-twitter_username: mayhewsw
-github_username:  mayhewsw
+# Dependencies
+markdown:         kramdown
 
-# Build settings
-markdown: kramdown
-permalink: pretty
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Stephen Mayhew
+tagline:          'My Academic Blog'
+description:      'Academic Blog'
+url:              http://cogcomp.cs.illinois.edu/~mayhew2
+baseurl:          /
+
+author:
+  name:           'Mark Otto'
+  url:            https://twitter.com/mayhewsw
+
+
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/mayhewsw
+
+gems: [jekyll-paginate]       
+paginate: 5
+paginate_path: "page:num"
