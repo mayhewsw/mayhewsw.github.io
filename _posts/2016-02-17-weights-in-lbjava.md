@@ -3,6 +3,7 @@ layout: post
 mathjax: true
 comments: true
 excerpt: How to get weights in LBJava
+title: Weights in LBJava
 ---
 
 If you're using LBJava, chances are you will eventually want to get

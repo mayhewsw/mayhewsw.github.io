@@ -30,7 +30,7 @@ To show the results, I plotted them with individual scripts on the x-axis and nu
 
 The leftmost script is Latin, with 513 languages. The x-axis is truncated at the 50th script, after which all scripts have a small number of languages (<3).
 
-Here are the top 10 languages:
+Here are the top 10 scripts (num languages in parens):
 
 1. Latin: 513
 2. Devanagari: 182
