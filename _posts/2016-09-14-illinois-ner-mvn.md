@@ -18,26 +18,26 @@ Say you want to use [illinois-ner](https://github.com/IllinoisCogComp/illinois-c
  I'm going to assume that you have started with a Ubuntu machine, and you have some Java, maven, and command-line skills. Let's
  download some prerequisites:
 
-{% highlight bash %}
+~~~bash
 $ sudo apt-get install default-jre default-jdk
 $ sudo apt-get install maven
-{% endhighlight %}
+~~~
 
  Ok, good. Now, let's create a bog-standard maven project as a container. You could read the [quick-start guide](https://maven.apache.org/guides/getting-started/),
  or you could just run this handy code snippet that I stole from that page.
 
-{% highlight bash %}
+~~~bash
  $ mvn -B archetype:generate \
      -DarchetypeGroupId=org.apache.maven.archetypes \
      -DgroupId=com.mycompany.app \
      -DartifactId=my-app
-{% endhighlight %}
+~~~
 
  This created a little skeleton of a maven project in a folder called `my-app/`. Now, following the directions on
  [this page](https://github.com/IllinoisCogComp/illinois-cogcomp-nlp#using-each-library-programmatically), add the
  correct dependency and repository to your `pom.xml`. It should now look like this:
 
-{% highlight xml %}
+~~~xml
  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
    <modelVersion>4.0.0</modelVersion>
@@ -74,7 +74,7 @@ $ sudo apt-get install maven
    </repositories>
 
  </project>
-{% endhighlight %}
+~~~
 
 Well done. Make sure you are in the `my-app/` directory, and try compiling to see what
 happens (there should be a lot of downloading, and then BUILD SUCCESS), and then run it.
