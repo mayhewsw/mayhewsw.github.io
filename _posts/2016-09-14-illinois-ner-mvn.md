@@ -12,9 +12,6 @@ Say you want to use [illinois-ner](https://github.com/IllinoisCogComp/illinois-c
  Good choice. You have good taste. This is a little tutorial to help you along. I'm going to pretend you know nothing, and start from scratch. By the end of this tutorial,
  you will be tagging text like nobody's business.
 
-
-## Prerequisites
-
  I'm going to assume that you have started with a Ubuntu machine, and you have some Java, maven, and command-line skills. Let's
  download some prerequisites:
 
