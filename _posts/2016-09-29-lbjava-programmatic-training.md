@@ -63,6 +63,7 @@ Great, now we just need to train and test in Java code. Keep in mind what ingred
 Let's see how to use it. Create a new file called, say, `Trainer.java`.
 
 ~~~java
+import edu.illinois.cs.cogcomp.lbjava.classify.TestDiscrete;
 import edu.illinois.cs.cogcomp.lbjava.learn.BatchTrainer;
 
 public class Trainer {
@@ -82,33 +83,21 @@ public class Trainer {
         bt.train(iterations);
 
         // save the model files to these locations (for convenience)
-        classifier.write("model", "lexicon");
+        cls.write("model", "lexicon");
 
     }
 
-    public static void Test(){
+    public static void Test() {
         // instantiate the trained classifier
         SpamClassifier cls = new SpamClassifier("model", "lexicon");
+        SpamLabel oracle = new SpamLabel();
 
-        // ad hoc training code
         String path = "data/spam/test/";
         DocumentReader dr = new DocumentReader(path);
-        Document d;
-        int correct = 0;
-        int total = 0;
-        while((d = (Document) dr.next()) != null){
-            String gold = d.getLabel();
-            String pred = cls.discreteValue(d);
-            if(gold.equals(pred)){
-                correct++;
-            }
-            total++;
-        }
+        TestDiscrete tt = TestDiscrete.testDiscrete(cls, oracle, dr);
 
-        System.out.println(correct / (float)total);
-
+        tt.printPerformance(System.out);
     }
-
 
     public static void main(String[] args) {
         Train();
