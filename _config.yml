@@ -6,8 +6,8 @@ permalink:        pretty
 
 # Setup
 title:            Stephen Mayhew
-tagline:          'My Academic Blog'
-description:      'Academic Blog'
+tagline:          'Homepage'
+description:      'Homepage'
 url:              http://mayhewsw.github.io
 baseurl:          /
 
@@ -24,4 +24,4 @@ github:
 
 gems: [jekyll-paginate]       
 paginate: 5
-paginate_path: "page:num"
+paginate_path: "/blog/page:num/"
