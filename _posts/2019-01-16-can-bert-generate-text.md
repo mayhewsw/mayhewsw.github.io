@@ -23,7 +23,7 @@ This failed. BERT predicted "much" as the last word. Maybe this is because BERT 
 
 One might argue that we should continue predicting after "much". Maybe it's going to produce something meaningful. To that I would say: first, this was meant to be a dead giveaway, and any human would predict "hungry". Second, I tried it, and it keeps predicting dumb stuff. After "much", the next token is ",".
 
-So, at least using these trivial methods, BERT can't generate text. That said, the [Trasnformer-Decoder](https://github.com/huggingface/pytorch-openai-transformer-lm) from OpenAI does generate text very nicely.
+So, at least using these trivial methods, BERT can't generate text. That said, the [Transformer-Decoder](https://github.com/huggingface/pytorch-openai-transformer-lm) from OpenAI does generate text very nicely.
 
 Here's my experimental code:
 
