@@ -37,6 +37,7 @@ tokenizer = BertTokenizer.from_pretrained(modelpath)
 
 text = "dummy. although he had already eaten a large meal, he was still very hungry."
 target = "hungry"
+tokenized_text = tokenizer.tokenize(text)
 
 # Mask a token that we will try to predict back with `BertForMaskedLM`
 masked_index = tokenized_text.index(target)
