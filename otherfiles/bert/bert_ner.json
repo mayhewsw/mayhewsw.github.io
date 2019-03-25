@@ -17,7 +17,7 @@
   "test_data_path": std.extVar("NER_TEST_B_PATH"),
   "evaluate_on_test" : true,
   "model": {
-    "type": "bert_classifier",
+    "type": std.extVar("MODEL"),
     "label_encoding": "BIOUL",
     "calculate_span_f1": true,
     "dropout" : 0.5,
