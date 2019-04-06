@@ -30,6 +30,9 @@ to be properly retrieved from the pre-trained embeddings, the _only way_ to do i
 Note: if you fine-tune embeddings at train time, it's not clear what to do at test time. For a word not present in train, it may not
 make sense to select from the untuned lookup table. Then again, maybe this is better than mapping to UNK.
 
+Update: this [pull request](https://github.com/allenai/allennlp/pull/1822) shows that you can add a parameter `min_pretrained_embeddings`
+that will force a certain number of embeddings to be stored in the vocabulary, potentially increasing the model size. 
+
 The badge below will take you to a minimal code sample you can play with.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gist/mayhewsw/3ced494825fa65378464cbf268325b58/master)
