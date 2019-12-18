@@ -39,5 +39,3 @@ Now you know what the article was about. The entities themselves are instructive
 The picture I'm trying to paint is related to the [linguistic notion of reference](https://glossary.sil.org/term/reference). Not being a linguist, I will say as little as possible, but it is very hard to refer to concrete named entities without using their names. For example, one might try to communicate the idea of "Greece" by saying "the home country of the philosopher who self-administered poison, and after whom a teaching method is named" (because we are also not allowed to say "Socrates"). Good luck with the IMF.
 
 Therefore, if you want to refer to concrete named entities (and most of us do, most of the time), then your utterances will include named entities. Grounding these utterances in some concrete reality is arguably an important step for understanding. So natural language understanding will require named entity recognition.
-
-(If you have comments on this, feel free to [email me](http://mayhewsw.github.io/assets/resume.pdf))
