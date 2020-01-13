@@ -2,6 +2,7 @@
 layout: post
 title: Can you use BERT to generate text?
 excerpt: No.
+comments: true
 ---
 
 Just quickly wondering if you can use [BERT](https://arxiv.org/abs/1810.04805) to generate text. I'm using [huggingface's pytorch pretrained BERT model](https://github.com/huggingface/pytorch-pretrained-BERT/) (thanks!). I know BERT isn't designed to generate text, just wondering if it's possible. It's trained to predict a masked word, so maybe if I make a partial sentence, and add a fake mask to the end, it will predict the next word. As a first pass on this, I'll give it a sentence that has a dead giveaway last token, and see what happens. 
