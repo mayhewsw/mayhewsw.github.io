@@ -42,7 +42,7 @@ $( document ).ready(function() {
         // };
 
 
-    $('div.pub').mouseenter(function () {
+    $('bibtexentry').mouseenter(function () {
         $(this).css("border-left", "0 solid #DDD").animate({
             borderWidth: 4,
             paddingLeft: 10
