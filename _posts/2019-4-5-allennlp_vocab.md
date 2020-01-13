@@ -2,6 +2,7 @@
 layout: post
 title: Vocabulary in Allennlp
 excerpt: tldr; always include test in your config.
+comments: true
 ---
 
 I've been using [allennlp](https://github.com/allenai/allennlp/) a lot lately, and I have found it to be immensely 
