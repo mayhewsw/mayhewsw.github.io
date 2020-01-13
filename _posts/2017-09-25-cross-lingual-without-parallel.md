@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Cross-lingual Transfer of Named Entity Recognizers without Parallel Corpora
+comments: true
 ---
 
 I recently came across this paper: [Cross-lingual Transfer of Named Entity Recognizers

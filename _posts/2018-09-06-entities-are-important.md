@@ -2,6 +2,7 @@
 layout: post
 title: Entities are Important
 excerpt: Who cares about NER anyway?
+comments: true
 ---
 
 When I explain to friends and acquaintances that my work is in Named Entity Recognition (NER), the next question is often: why is this important? This is a fair question, and one I ask myself a good deal. One answer I give is this: NLP is (ostensibly) all about understanding text, and entities are important for understanding text.
