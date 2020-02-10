@@ -2,6 +2,7 @@
 layout: post
 title: The Machine Learning Model Library of Babel
 excerpt: In this library, all possible machine learning models exist.
+comments: true
 ---
 
 <img src="/assets/library-of-babel.jpg">
