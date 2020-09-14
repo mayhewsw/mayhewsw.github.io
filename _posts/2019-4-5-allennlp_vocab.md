@@ -13,10 +13,10 @@ Long story short, the question is: should you include your test data in your voc
 No, because test data should be completely unseen. Ideally, if a test token is present in your pre-trained embeddings, then it 
 should be retrieved, otherwise, it should become an UNK token and get an UNK embedding.
 
-In an allennlp config file (for example, see [here](https://github.com/allenai/allennlp/blob/master/training_config/ner.jsonnet)), you are required to give 
+In an allennlp config file (for example, see [here](https://github.com/allenai/allennlp-models/blob/master/training_config/tagging/ner.jsonnet)), you are required to give 
 paths for `train_data_path` and `validation_data_path`, and you _may_ 
 give a path fo `test_data_path`. All datasets given in the config are used when creating the 
-vocabulary. For example, in [this file](https://github.com/allenai/allennlp/blob/master/training_config/ner.jsonnet) 
+vocabulary. For example, in [this file](https://github.com/allenai/allennlp-models/blob/master/training_config/tagging/ner.jsonnet) 
 the test data is included in the vocabulary.
 
 But here's the thing: in allennlp, if you do *not* include the `test_data_path` key in your config, then every word
