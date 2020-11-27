@@ -85,6 +85,8 @@ The original paper, and [several](https://arxiv.org/pdf/1901.07291.pdf) [works](
 
 <img src="/assets/XNLI-baselines.png">
 
+Note: I use "~English", as in "approximately English", to indicate that the text is the output of a machine translation model, subject to error.
+
 In the **Standard** way, cross-lingual methods train on English MNLI and test on the XNLI dataset, as is. One model must transfer to Bulgarian, and Hindi, and Vietnamese, etc. I call this "**Standard**" because the purpose of the dataset is to provide a benchmark for cross-lingual language understanding.
 
 Then there are two translation-based baselines. The intuition here is that if machine translation were perfect, then the need for cross-lingual methods would more or less go away. Just translate any data into English, and throw RoElBERPT3a at it. (By the way, one counterargument here is efficiency issues. When doing information retrieval, it would be inconvenient to translate the entire internet into English).
