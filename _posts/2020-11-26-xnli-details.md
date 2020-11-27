@@ -67,7 +67,7 @@ Typically, this task is done in one language (English), and standard datasets in
 
 XNLI is inspired by MNLI, but is an entirely new dataset. But unlike most new datasets, it consists only of dev and test sets, with the (English) MNLI training set used for training.
 
-The process of creating the dev and test sets followed closely after MNLI, by selecting and annotating 750 English examples each from 10 different genres. This created a dataset of 7500 English examples. These examples were then professionally translated (that is, by humans) into 14 other languages, as shown in the figure below.
+The process of creating the dev and test sets followed closely after MNLI, by selecting and annotating 750 English examples each from 10 different genres, resulting in a dataset with a total of 7500 English examples. These examples were then professionally translated (that is, by humans) into 14 other languages, as shown in the figure below.
 
 <img width="50%" style="margin-left: auto; margin-right: auto;" src="/assets/XNLI-creation.png">
 
@@ -83,13 +83,13 @@ That's the big picture for dataset creation. Further details on crowdsourcing, t
 
 The original paper, and [several](https://arxiv.org/pdf/1901.07291.pdf) [works](https://arxiv.org/pdf/1911.02116.pdf) [since](https://arxiv.org/pdf/2010.11934.pdf), evaluate on the dataset in at least three distinct ways, as outlined in the figure below.
 
+<img src="/assets/XNLI-baselines.png">
+
 In the **Standard** way, cross-lingual methods train on English MNLI and test on the XNLI dataset, as is. One model must transfer to Bulgarian, and Hindi, and Vietnamese, etc. I call this "**Standard**" because the purpose of the dataset is to provide a benchmark for cross-lingual language understanding.
 
 Then there are two translation-based baselines. The intuition here is that if machine translation were perfect, then the need for cross-lingual methods would more or less go away. Just translate any data into English, and throw RoElBERPT3a at it. (By the way, one counterargument here is efficiency issues. When doing information retrieval, it would be inconvenient to translate the entire internet into English).
 
 The two baselines are either to translate the many languages in the test data into English (**Translate Test**), or the English training data into many languages (**Translate Train**). The quality of translation in each case depends on the source/target language, but also on the state-of-the-art in translation methods, so it should probably be periodically reevaluated.
-
-<img src="/assets/XNLI-baselines.png">
 
 There are several usage paradigms in the **Translate Train** case. One may train 15 monolingual models (as reported in [XLM-R](https://arxiv.org/pdf/1911.02116.pdf)), or train one big multilingual model (as in [mT5](https://arxiv.org/pdf/2010.11934.pdf). Note: not technically cross-lingual since the target language is present in the training data).
 
