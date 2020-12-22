@@ -58,18 +58,15 @@ Here are the states I have visited, and which I remember. Driving through counts
 <script>
     $(document).ready(function() {
 
-        var states = ["IN", "MA", "MI", "IL", "WI", "AZ", "MD", "NH", "CA", "CO","UT", "WA", "OR", "NY", "OH", "TN", "OK", "TX", "MO", "IA", "MN", "PA", "DE", "NJ", "DC", "NC", "WV", "VA"];
+        var states = ["IN", "MA", "MI", "IL", "WI", "AZ", "MD", "NH", "CA", "CO","UT", "WA", "OR", "NY", "OH", "TN", "OK", "TX", "MO", "IA", "MN", "PA", "DE", "NJ", "DC", "NC", "WV", "VA", "LA", "ME"];
 
         var styles = {};
         var hoverstyles = {};
 
-
         for(var id in states) {
             styles[states[id]] = {fill: "#ffa500"};
             hoverstyles[states[id]] = {fill: "#ffc04c"};
-
         }
-
 
         $('#map').usmap({
             stateStyles: {fill: 'grey'},
