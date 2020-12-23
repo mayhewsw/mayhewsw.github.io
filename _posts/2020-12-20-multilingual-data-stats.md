@@ -19,4 +19,6 @@ Not all datasets report the file size. To get a rule of thumb for uncompressed d
 
 This high number has to point to some mistakes in the CC-100 table! For example, the reported values for Ukrainian (6.5 M tokens and 84.6GiB) mean that there are 13,015 bytes/token, which seems... high. Similar problems exist for Thai and Chinese (perhaps segmentation errors?) and Swedish.
 
+**Update (12/23/20)**: I emailed the authors, and they confirmed the Ukrainian and Swedish numbers were typos in the paper. The Chinese, Thai, and Japanese numbers are calculated without segmentation.
+
 In the Wikipedia datset, the top 3 languages with the largest numbers of bytes/word are Korean (18.7), Georgian (17.8), and Mingrelian (16.1). This probably says more about the unicode encoding than the average word length, although with some careful alphabet accounting, you could probably figure it out.
