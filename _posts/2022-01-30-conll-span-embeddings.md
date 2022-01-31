@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CoNLL NER Embeddings
+title: (WIP) CoNLL NER Embeddings
 excerpt: What happens if you visualize the embeddings of every CoNLL tag?
 comments: false
 ---
