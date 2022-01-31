@@ -30,7 +30,7 @@ In the ALL-by-label plot, different areas for each label are apparent. Interesti
 <a href="/assets/conll-tags/ALL.html" target="_blank"><img src="/assets/conll-tags/ALL-odd-island.png"  class="image-right" /></a>
 There's an odd island with center around (-4, -4). This becomes clearer when we look at the plot with the alternate coloring: that entire island is green, indicating that those entities are all capitalized. Unsurprisingly, each individual label plot shows a similar pattern. 
 
-Why are these all grouped together? It could be that BERT relies heavily on orthography, but it could also be an anomaly of the dataset, in which certain types sentences are capitalized. Most points in this cluster represent document metadata strings, identifying location and date ("CALGARY 1996-08-23", "BOMBAY 1996-08-22") and some are document titles ("LOMBARDI WINS THIRD STAGE..."). 
+Why are these all grouped together? It could be that BERT relies heavily on orthography, but it could also be an anomaly of the dataset, in which certain types of sentences are capitalized. Most points in this cluster represent document metadata strings, identifying location and date ("CALGARY 1996-08-23", "BOMBAY 1996-08-22") and some are document titles ("LOMBARDI WINS THIRD STAGE..."). 
 
 There's a separate green cluster near point (1, -7) which includes many strings like "U.S.". Interestingly, this cluster has small satellite clusters containing strings like "U.N." (United Nations) and "S.C." (South Carolina), suggesting that the cluster is based on orthography. But there is also a satellite cluster for "United States", suggesting that entity reference is also sometimes used. 
 
