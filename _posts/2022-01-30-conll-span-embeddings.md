@@ -6,9 +6,9 @@ comments: false
 ---
 
 
-I was thinking about NER tagsets recently -- which tags should be included, what distinctions matter, where there is overlap -- and it occurred to me that a visualization of the embeddings of each entity phrase could help shed some light.
+I was thinking about NER tagsets recently -- which tags should be included, what distinctions matter, where there is overlap -- and it occurred to me that a visualization of the embeddings of each entity phrase could help shed some light (not unlike [Datamaps](https://arxiv.org/pdf/2009.10795.pdf)).
 
-You can click on each image for an interactive visualization, or read farther for details and observations.
+You can click on each image for an ✨ interactive visualization ✨, or read farther for details and observations.
 
 <a href="/assets/conll-tags/ALL-by-label.html" target="_blank"><img src="/assets/conll-tags/ALL-by-label.png" width="40%"  style="display:inline"/></a>
 <a href="/assets/conll-tags/ALL.html" target="_blank"><img src="/assets/conll-tags/ALL.png" width="40%" style="display:inline" /></a>
@@ -27,14 +27,14 @@ In one of the ALL plots, I colored according to tag (above). In all others (belo
 
 In the ALL-by-label plot, different areas for each label are apparent. Interestingly, Person is the most distinct. Although Organization and Location have central areas of density, the boundaries are less clear. Miscellaneous, on the other hand, seems to exist in the same spaces as Organization and Location. This will be explored more in a later section. 
 
+<a href="/assets/conll-tags/ALL.html" target="_blank"><img src="/assets/conll-tags/ALL-odd-island.png"  class="image-right" /></a>
 There's an odd island with center around (-4, -4). This becomes clearer when we look at the plot with the alternate coloring: that entire island is green, indicating that those entities are all capitalized. Unsurprisingly, each individual label plot shows a similar pattern. 
 
 Why are these all grouped together? It could be that BERT relies heavily on orthography, but it could also be an anomaly of the dataset, in which certain types sentences are capitalized. Most points in this cluster represent document metadata strings, identifying location and date ("CALGARY 1996-08-23", "BOMBAY 1996-08-22") and some are document titles ("LOMBARDI WINS THIRD STAGE..."). 
 
 There's a separate green cluster near point (1, -7) which includes many strings like "U.S.". Interestingly, this cluster has small satellite clusters containing strings like "U.N." (United Nations) and "S.C." (South Carolina), suggesting that the cluster is based on orthography. But there is also a satellite cluster for "United States", suggesting that entity reference is also sometimes used. 
 
-<a href="/assets/conll-tags/ALL.html" target="_blank"><img src="/assets/conll-tags/loc-us.png" /></a>
-
+<a href="/assets/conll-tags/ALL.html" target="_blank"><img src="/assets/conll-tags/ALL-us.png"/></a>
 
 
 ## Assumptions
