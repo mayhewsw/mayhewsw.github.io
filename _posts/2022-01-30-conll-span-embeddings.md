@@ -19,9 +19,9 @@ You can click on each image for an ✨ interactive visualization ✨, or read fa
 
 
 ## Embedding Entities
-As with every other researcher for the past 19 years, the term "NER" makes me reflexively reach for [CoNLL-2003](https://www.clips.uantwerpen.be/conll2003/ner/) English dataset, with tagset: Person, Organization, Location, and Miscellaneous. Using the training set, I got the BERT embeddings (specifically [`distilroberta-base`](https://huggingface.co/distilroberta-base)) for each labeled span (summing constituent subwords), and projected to 2 dimensions with [T-SNE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html). I repeated this process 6 times: one for each of the 4 labels, then 2 different plots with all labels but distinct coloring. 
+As with every other researcher for the past 19 years, the term "NER" makes me reflexively reach for [CoNLL-2003](https://www.clips.uantwerpen.be/conll2003/ner/) English dataset, with tagset: Person, Organization, Location, and Miscellaneous. Using the training set, I got the BERT embeddings (specifically [`distilroberta-base`](https://huggingface.co/distilroberta-base)) for each labeled span (summing constituent subwords), and reduced to 2 dimensions with [T-SNE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html). I repeated this process 6 times: one for each of the 4 labels, then 2 different plots with all labels but distinct coloring. 
 
-In one of the ALL plots, I colored according to tag (above). In all others (below), I categorized using properties of each entity, assigning the first applicable category in this order: if it was preceded by a left parenthesis (`paren`), if it consisted of all capitals (`all_caps`), if it was the first token in a sentence (`initial`),, and a catch-all category (`plain`). For the Location plot, I subdivided `plain` into `LOC` (if it was preceded by a preposition like "in" or "near") and `GPE` (all others).
+In one of the ALL plots, I colored according to label. In all others, I categorized using properties of each entity, assigning the first applicable category in this order: if it was preceded by a left parenthesis (`paren`), if it consisted of all capitals (`all_caps`), if it was the first token in a sentence (`initial`),, and a catch-all category (`plain`). For the Location plot, I subdivided `plain` into `LOC` (if it was preceded by a preposition like "in" or "near") and `GPE` (all others).
 
 ## Observations
 There are lots of interesting things to notice -- here are a few.
@@ -42,21 +42,41 @@ The Person embeddings show some fascinating patterns. They are organized in roug
 
 The nationalities clusters are quite distinct. I only marked the major ones (and used very broad categories), but I would encourage you to look around in the interactive map. The clusters get pretty fine-grained.
 
-Setting aside qualms about the inadequacy of T-SNE, one might ask: could you recover a world map? Or, do the spatial orientation of these clusters correlate to central geographic location of these nationalities. It's not a slam-dunk, but if you squint, you can see that American and Hispanic names are close at the bottom, as are the North and South American continents. There's a roughly European section in the middle, and then several Eastern nationalities are grouped together near the top, although it's all a bit confused (why is India between Japan and China? Africa is not exactly "Eastern").
+Setting aside qualms about the inadequacy of T-SNE, one might ask: could you recover a world map? Or, do the spatial orientation of these clusters correlate to central geographic location of these nationalities? It's not a slam-dunk, but if you squint, you can see that American and Hispanic names are close at the bottom, like the North and South American continents. There's a roughly European section in the middle, and then several Eastern nationalities are grouped together near the top, although it's all a bit confused (why is India between Japan and China? Why is the Chinese cluster to small?). The African cluster is conspicuously small. 
 
 The pattern-based clusters are far less interesting, although the small group of green dots has many mistakes: including non-persons like "REUTERS", "DENVER", and "SAO PAULO". 
 
 
 <a href="/assets/conll-tags/PER.html" target="_blank"><img src="/assets/conll-tags/PER-annotated.png"/></a>
 
+## Miscellaneous
 
-## Assumptions
+The MISC tag in CoNLL is [ill-defined](https://www.clips.uantwerpen.be/conll2003/ner/annotation.txt), including things as broad as religions, nationalities, slogans, and eras in time. This is reflected in the way that it has no central cluster in the ALL graph.
 
-I want to acknowledge that this project makes some assumptions:
-- BERT embeddings encode something meaningful about language
-- T-SNE projection is faithful to the underlying representations
+But similar to the Person tags, we see clusters around nationality, as well as political party, and stock exchange.
 
-"All models are wrong, but some are useful. -- George Box" -- Stephen Mayhew
+<a href="/assets/conll-tags/MISC.html" target="_blank"><img src="/assets/conll-tags/MISC-annotated.png"/></a>
+
+<a href="/assets/conll-tags/ALL-by-label.html" target="_blank"><img src="/assets/conll-tags/ALL-misc-loc.png"  class="image-right" /></a>Given the way English represents nationalities, one might expect that nationality would be close to the country name (Japanese and Japan, German and Germany, etc.) This turns out to be true. I've annotated a few, along with lines representing their cluster distances, but you can find many more such groups.
+
+## Location
+This tag is perhaps the least interesting of all. There are clusters, and they are pretty much all exactly as you would expect: England, Pakistan, Europe, China, Africa, etc. I don't have a hypothesis about recovering a world map -- a glance over it suggests it's not a close correlation. 
+
+There are also clusters at different geographical abstractions: cities, states, countries. Cities that share a country are close to one another, but they are not close to that country. For example, "U.S." is across the plot from "Chicago."
+
+My little experiment of trying to distinguish "passive locations" from "locations with agency" (marked as LOC and Geo-Political Entity (GPE), although I think this was a mistake) showed that BERT treats these classes more or less the same. If you find the clusters for "China" (-7, -10), for example, you will find that entities in contexts of "China requested..." or "China said..." (location with agency) are mixed indiscriminately with entities in contexts of "...people in China" or "...traveled to China" (passive location).
+
+
+## Organization
+Organizations can be divided in roughly 3 large categories: sports teams (in the bottom half of the graph), governmental agencies and political parties (on the top left edge), and corporations (top right edge). Interestingly, sports teams arrange roughly by league, although not necessarily by sport. Notice how the English Premier League (soccer) is a long way from the Israeli Premier League (soccer).
+
+
+<a href="/assets/conll-tags/ORG.html" target="_blank"><img src="/assets/conll-tags/ORG-annotated.png"/></a>
+
+## Conclusions
+
+There's a whole lot more to be seen in these graphs! I've only scratched the surface. In the end, I'm left wondering if we've learned more about BERT, or about this dataset. 
+
 
 Code can be found in [this notebook](https://github.com/mayhewsw/mayhewsw.github.io/blob/master/assets/conll-tags/cluster_conll.ipynb) (tip: open it in Colab and run it on GPU).
 
