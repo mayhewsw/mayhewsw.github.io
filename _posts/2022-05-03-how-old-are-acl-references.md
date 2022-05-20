@@ -22,7 +22,7 @@ Two interesting facts: 1) it was only 2006 when publication numbers started regu
 
 The spikes in publication numbers in 1984, 1998, and 2006 are because on those years ACL was held jointly with COLING.
 
-***Number of references has steadily increased since 2010.*** This is a fun one. Up until and including [2009](https://aclweb.org/mirror/acl2009/main/authors/stylefiles/word/acl-ijcnlp2009.pdf), only one page was allowed for references, probably because of printing constraints. You can fit about 20 references on a page (unless you cite Universal Dependencies), which explains why the average hovered around 20 for a while. But starting in [2010](https://mirror.aclweb.org/acl2010/authors_final.html), papers were allowed unlimited references. Interestingly, the number of references has slowly grown since then. Is that just the field righting itself after years of reference starvation, or are we requiring unnecessary thoroughness?
+***Number of references has steadily increased since 2010.*** This is a fun one. Up until and including [2009](https://aclweb.org/mirror/acl2009/main/authors/stylefiles/word/acl-ijcnlp2009.pdf), only one page was allowed for references, probably because of printing constraints. You can fit about 20 references on a page (unless you cite Universal Dependencies), which explains why the average hovered around 20 for a while. But in [2010](https://mirror.aclweb.org/acl2010/authors_final.html), 2012, and then from 2016 onwards, papers were allowed unlimited references. Interestingly, the number of references has slowly grown since then. Is that just the field righting itself after years of reference starvation, or are we requiring unnecessary thoroughness?
 
 ***Reference age (mean and median) has been decreasing since around 2015 and has reached a low not seen since the early 1990s.*** To be clear, I calculate `reference age` for a reference by subtracting `reference year` from `conference year`. For example, in an ACL 2017 paper, a citation to a paper in 2013 has reference age 4. Then for that year, I put every reference from every paper into a list and calculate statistics. 
 
@@ -59,6 +59,19 @@ Again, you can find my code and data [here](https://github.com/mayhewsw/acl-refe
 
 - This analysis was entirely over ACL publications! It may be that EMNLP or NAACL have different patterns, although I doubt it.
 - I personally only started reading and paying attention to NLP papers in 2012 or so. Some of my readers have been around longer, and probably have nuances or corrections for me. For example, thanks to Burr Settles for pointing out the unlimited references thing in 2010.
+
+## Update: comparing to "On Forgetting to Cite Older Papers"
+Marcel Bollman graciously [pointed out](https://twitter.com/mmbollmann/status/1525951759088111616) that I 
+should probably have at least linked to his paper on a similar topic: [On Forgetting to Cite Older Papers: An Analysis of the ACL Anthology](https://aclanthology.org/2020.acl-main.699/), published in ACL 2020. Ironically, this paper is part of my dataset.
+
+I'd encourage you to read their paper (and cite it), but here are my brief observations:
+- On the whole, we have pretty similar conclusions! Old papers are still being cited, but the influx of new papers makes it harder to see that.
+- My hypothesis about different conferences having similar behavior was largely correct, although very interesting to read about TACL and and CL having different patterns.
+- I was wrong about unlimited references starting in 2010! ACL allowed unlimited references in 2010, 2012, and then from 2016 onwards.
+- Their analysis goes back to 2010, but my analysis goes all the way back to 1979, which surfaces a few interesting patterns.
+- We had different methods for gathering references. They parsed references themselves, I used SemanticScholar. It's hard to say if one is better than another, but given similar conclusions, they are probably similar.
+- We both included tables of Most Cited Papers by year -- great minds, etc. etc. 
+- I had wondered if this kind of thing was publishable, and I'm happy to see the answer is Yes!
 
 
 ## Bonus: Most Cited Papers by Year
